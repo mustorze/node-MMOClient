@@ -21,6 +21,7 @@ class Connection {
           for (const i in data.init.players) {
             const player = data.init.players[i];
             const p = new classes.Player(player.id, player.x, player.y, player.color);
+            p.score = player.score;
             Players.push(p);
             const P = Players.find(item => item.id === Self.id);
             Self.Player = P;
@@ -33,6 +34,7 @@ class Connection {
             const p = Players.find(item => item.id === player.id);
             p.x = player.x;
             p.y = player.y;
+            p.score = player.score;
             const P = Players.find(item => item.id === Self.id);
             Self.Player = P;
           }
@@ -69,7 +71,9 @@ class Connection {
 
         for (const i in data.players) {
           const player = data.players[i];
-          Players.push(new classes.Player(player.id, player.x, player.y, player.color));
+          let p = new classes.Player(player.id, player.x, player.y, player.color)
+          p.score = player.score
+          Players.push(p);
         }
 
         for (const i in data.bullets) {

@@ -5,7 +5,8 @@ class Player {
         /** data */
         this.x = x;
         this.y = y;
-        this.color = color;
+        this.color = color
+        this.score = 0;
     }
 }
 
