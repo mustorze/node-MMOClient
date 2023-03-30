@@ -30,9 +30,9 @@ class Connection {
         if (data.update.players.length > 0) {
           for (const i in data.update.players) {
             const player = data.update.players[i];
-            var P = Players.find(item => item.id === player.id);
-            P.x = player.x;
-            P.y = player.y;
+            const p = Players.find(item => item.id === player.id);
+            p.x = player.x;
+            p.y = player.y;
             const P = Players.find(item => item.id === Self.id);
             Self.Player = P;
           }
@@ -76,6 +76,11 @@ class Connection {
           const bullet = data.bullets[i];
           Bullets.push(new classes.Bullet(bullet.id, bullet.x, bullet.y, bullet.angle, bullet.color));
         }
+      });
+
+      Self.socket.on('selfUpdate', function (data) {
+        Self.hp = data.hp ? data.hp : Self.hp;
+        Self.score = data.score ? data.score : Self.score;
       });
     });
   }

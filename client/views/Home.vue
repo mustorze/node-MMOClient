@@ -1,6 +1,6 @@
 <template>
   <div>
-    <canvas id="gameCanvas" ref="gameCanvas" width="500" height="500" class="gameCanvas"
+    <canvas id="gameCanvas" ref="gameCanvas" width="1000" height="500" class="gameCanvas"
             @mousedown="mouseDown" @mouseup="mouseUp" @mousemove="mouseMove"></canvas>
   </div>
 </template>

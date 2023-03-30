@@ -1,7 +1,7 @@
 import './promise-polyfill'
 import { app } from './app'
 
-global.Self = {};
+global.Self = {hp: 10, score: 0};
 global.Players = [];
 global.Bullets = [];
 

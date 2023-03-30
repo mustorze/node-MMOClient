@@ -1,6 +1,6 @@
 class Drawing {
   draw() {
-    Self.canvas.clearRect(0, 0, 500, 500);
+    Self.canvas.clearRect(0, 0, 1000, 500);
 
     /** Player */
     for (const i in Players) {
@@ -22,7 +22,9 @@ class Drawing {
       Self.canvas.fill();
     }
 
-    Self.canvas.stroke();
+    Self.canvas.font = "30px Arial";
+    Self.canvas.strokeText("HP: " + Self.hp, 510, 50);
+    Self.canvas.strokeText("SCORE: " + Self.score, 510, 150);
   }
 }
 
