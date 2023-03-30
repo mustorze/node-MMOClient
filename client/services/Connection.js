@@ -20,7 +20,7 @@ class Connection {
         if (data.init.players.length > 0) {
           for (const i in data.init.players) {
             const player = data.init.players[i];
-            const p = new classes.Player(player.id, player.x, player.y);
+            const p = new classes.Player(player.id, player.x, player.y, player.color);
             Players.push(p);
             const P = Players.find(item => item.id === Self.id);
             Self.Player = P;
@@ -50,7 +50,7 @@ class Connection {
         if (data.init.bullets.length > 0) {
           for (const i in data.init.bullets) {
             const bullet = data.init.bullets[i];
-            const p = new classes.Bullet(bullet.id, bullet.x, bullet.y, bullet.angle);
+            const p = new classes.Bullet(bullet.id, bullet.x, bullet.y, bullet.angle, bullet.color);
             Bullets.push(p);
           }
         }
@@ -69,12 +69,12 @@ class Connection {
 
         for (const i in data.players) {
           const player = data.players[i];
-          Players.push(new classes.Player(player.id, player.x, player.y));
+          Players.push(new classes.Player(player.id, player.x, player.y, player.color));
         }
 
         for (const i in data.bullets) {
           const bullet = data.bullets[i];
-          Bullets.push(new classes.Bullet(bullet.id, bullet.x, bullet.y, bullet.angle));
+          Bullets.push(new classes.Bullet(bullet.id, bullet.x, bullet.y, bullet.angle, bullet.color));
         }
       });
     });

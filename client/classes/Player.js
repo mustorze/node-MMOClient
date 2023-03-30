@@ -1,10 +1,11 @@
 class Player {
-    constructor(id, x, y) {
+    constructor(id, x, y, color) {
         this.id = id;
 
         /** data */
         this.x = x;
         this.y = y;
+        this.color = color;
     }
 }
 
