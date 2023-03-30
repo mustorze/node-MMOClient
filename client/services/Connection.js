@@ -4,7 +4,7 @@ import Game from './Game';
 
 class Connection {
   constructor() {
-    const socket = io('http://localhost:5000');
+    const socket = io(':5000');
     Self.socket = socket;
 
     this.game = new Game();
